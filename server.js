@@ -16,13 +16,8 @@ const url   = require('url');
 
 // ── Lê a chave do .env ──────────────────────
 function lerChave() {
-  const envPath = path.join(__dirname, '.env');
-  if (!fs.existsSync(envPath)) return null;
-  const conteudo = fs.readFileSync(envPath, 'utf8');
-  const match = conteudo.match(/ANTHROPIC_API_KEY\s*=\s*(.+)/);
-  return match ? match[1].trim() : null;
+  return process.env.ANTHROPIC_API_KEY || null;
 }
-
 const PORT = 3000;
 
 const MIME = {
