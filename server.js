@@ -127,11 +127,4 @@ server.listen(PORT, () => {
   }
 
   // Abre o navegador automaticamente
-  const { exec } = require('child_process');
-  setTimeout(() => {
-    const cmd = process.platform === 'win32'  ? 'start http://localhost:' + PORT :
-                process.platform === 'darwin' ? 'open http://localhost:' + PORT  :
-                                                'xdg-open http://localhost:' + PORT;
-    exec(cmd, () => {});
-  }, 800);
 });
