@@ -18,7 +18,7 @@ const url   = require('url');
 function lerChave() {
   return process.env.ANTHROPIC_API_KEY || null;
 }
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
