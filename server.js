@@ -63,4 +63,6 @@ http.createServer((req, res) => {
     res.end('404');
     return;
   }
-  var mime = { '.html': 'text/html', '.js': 'application/javascript', '.json': 'application/js
+  
+  var mime = {html: "text/html", js: "application/javascript", json: "application/json"};
+var ext = path.extname(file).replace(".", "");
